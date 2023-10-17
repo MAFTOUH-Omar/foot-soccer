@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
-import './Liga.css'
+import './Ligue1.css'
 
-const PrimeraDivision = () => {
+const Ligue1 = () => {
   const [standings, setStandings] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [name , setName] = useState()
@@ -14,7 +14,7 @@ const PrimeraDivision = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        'https://football-standings-api-pqotco6hc-azharimm.vercel.app/leagues/esp.1/standings'
+        'https://football-standings-api-pqotco6hc-azharimm.vercel.app/leagues/fra.1/standings'
       );
       setStandings(response.data.data.standings);
       setName(response.data.data.name);
@@ -107,4 +107,4 @@ const PrimeraDivision = () => {
   );
 };
 
-export default PrimeraDivision;
+export default Ligue1;
